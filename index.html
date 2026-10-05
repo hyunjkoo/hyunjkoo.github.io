@@ -172,6 +172,8 @@ ol.pubs li.yh{color:var(--c2)}
 @media (max-width:700px){.gallery{grid-template-columns:minmax(0,1fr)}}
 
 table.alumni .now{font-size:13px;color:var(--muted)}
+
+nav a.active{color:var(--accent);font-weight:700}
 </style>
 </head>
 <body>
@@ -179,15 +181,13 @@ table.alumni .now{font-size:13px;color:var(--muted)}
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Koo <span>Research Group</span></a>
+    <a class="brand" href="index.html">Koo <span>Research Group</span></a>
     <nav aria-label="Main"><ul>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#people">People</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#photos">Photos</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul></nav>
   </div>
 </header>
@@ -197,7 +197,6 @@ table.alumni .now{font-size:13px;color:var(--muted)}
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="hsheet"><b>A-000</b><span>Detroit, MI</span></div>
       <h1 class="htitle">Koo Research Group</h1>
       <div class="haffil"><span class="prog">Construction Engineering and Management Program</span><br>Department of Civil and Environmental Engineering · Wayne State University</div>
       <p class="lede">We develop data-driven methods to reduce risk and waste across the life of buildings and infrastructure. Our group integrates building information modeling (BIM), machine learning, and life cycle assessment to detect design defects before construction, prioritize coordination risks, and support material reuse decisions in the renovation of existing buildings and aging urban infrastructure.</p>
@@ -221,102 +220,7 @@ table.alumni .now{font-size:13px;color:var(--muted)}
   <div class="wrap">
     <div class="sheet"><b>A-050</b><span>Biography</span></div>
     <h2>Short Biography</h2>
-    <p class="bio">Dr. Hyun Jeong Koo is an Assistant Professor of Construction Engineering and Management in the Department of Civil and Environmental Engineering at Wayne State University. Her research examines design quality, construction risk, and material reuse in building renovation, using building information modeling (BIM), data analytics, and machine learning. Dr. Koo received her Ph.D. in Civil Engineering from The University of Texas at Austin. She is a LEED Accredited Professional (BD+C).</p>
-  </div>
-</section>
-
-<section id="research">
-  <div class="wrap">
-    <div class="sheet"><b>A-100</b><span>Research</span></div>
-    <h2>Research Areas</h2>
-    <div class="themes">
-      <div class="theme">
-        <div class="tag">Design quality · BIM</div>
-        <h3>BIM coordination and design quality</h3>
-        <p>How design defects arise, how they can be detected early, and how BIM coordination can focus on the clashes that matter.</p>
-        <ul><li>Design defect leading indicators and complexity</li><li>Machine learning for clash relevance and risk prediction</li></ul>
-      </div>
-      <div class="theme">
-        <div class="tag">Renovation · Circular economy</div>
-        <h3>Adaptive reuse and material reuse</h3>
-        <p>Risk and decision making in historic building renovation, and methods to quantify which materials can be recovered and reused.</p>
-        <ul><li>Challenges in adaptive reuse of historic buildings</li><li>Cost-based material reuse decisions; BIM–LCA for hazardous materials</li></ul>
-      </div>
-      <div class="theme">
-        <div class="tag">Data · Communities</div>
-        <h3>Data-driven risk for infrastructure and communities</h3>
-        <p>Spatial and machine learning analysis of housing conditions, flood impacts, and infrastructure condition in urban settings such as Detroit and Flint.</p>
-        <ul><li>Housing characteristics, accessibility, and social vulnerability</li><li>Flood damage prediction; bridge risk prioritization</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="wrap">
-    <div class="sheet"><b>A-200</b><span>Publications</span></div>
-    <h2>Publications</h2>
-    <ol class="pubs" id="pubList"></ol>
-  </div>
-</section>
-
-<section id="teaching">
-  <div class="wrap">
-    <div>
-      <div class="sheet"><b>A-300</b><span>Teaching</span></div>
-      <h2>Courses at Wayne State</h2>
-      <ul class="plain">
-        <li><span>CE 4020 Introduction to Construction Engineering Management</span><span class="mono">W2022–26</span></li>
-        <li><span>CE 6060 Construction Techniques and Methods</span><span class="mono">F2022/24/25</span></li>
-        <li><span>CE 5995/7860 Construction Accounting and Financial Management</span><span class="mono">F2023/25</span></li>
-        <li><span>CE 6880 Building Information Modeling</span><span class="mono">W2024</span></li>
-        <li><span>CE 7020 Construction Safety</span><span class="mono">W2025</span></li>
-        <li><span>CE 7995 Advanced Principles and Practice Construction Engineering</span><span class="mono">F2026</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="service">
-  <div class="wrap">
-    <div class="sheet"><b>A-320</b><span>Service</span></div>
-    <h2>Service and Outreach</h2>
-    <div class="rows">
-      <div class="row"><div class="yr">2026</div><div><h3>Smart-Tech Construction Engineering Summer Academy</h3><div class="meta">Faculty Organizer · K-12 STEM outreach program offered in two four-day cohorts, introducing students to civil and construction engineering through BIM, virtual reality, 3D printing, drones, intelligent transportation systems, and construction site visits.</div></div></div>
-      <div class="row"><div class="yr">Present</div><div><h3>Construction Management Association of America (CMAA) Student Chapter</h3><div class="meta">Faculty Advisor · Department of Civil and Environmental Engineering, Wayne State University</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="awards">
-  <div class="wrap">
-    <div class="sheet"><b>A-350</b><span>Awards</span></div>
-    <h2>Awards and Honors</h2>
-    <div class="rows">
-      <div class="row"><div class="yr">2026</div><div>ASCE ExCEEd Faculty Fellow, American Society of Civil Engineers</div></div>
-      <div class="row"><div class="yr">2025–26</div><div>Excellence in Teaching Award, College of Engineering, Wayne State University</div></div>
-      <div class="row"><div class="yr">2025–26</div><div>Excellence in Teaching Award, Department of Civil and Environmental Engineering, Wayne State University</div></div>
-      <div class="row"><div class="yr">2024</div><div>Editor’s Choice, <i>Journal of Construction Engineering and Management</i>, for “Challenges managing large historic building renovations: Lessons learned from Detroit, Michigan”</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="people">
-  <div class="wrap">
-    <div class="sheet"><b>A-400</b><span>People</span></div>
-    <h2>People</h2>
-    <div id="peopleGroups"></div>
-    <div class="group-label">Alumni</div>
-    <div class="scroll"><table class="alumni"><tbody id="alumniRows"></tbody></table></div>
-    <p class="note">Prospective students interested in BIM, construction risk, renovation, or data-driven infrastructure research may contact Dr. Koo by email with a CV and a short statement of research interests.</p>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <div class="sheet"><b>A-500</b><span>Funded projects</span></div>
-    <h2>Projects</h2>
-    <div class="rows" id="projectRows"></div>
+    <p class="bio">Dr. Hyun Jeong Koo is an Assistant Professor of Construction Engineering and Management in the Department of Civil and Environmental Engineering at Wayne State University. Her research examines design quality, construction risk, and material reuse in building renovation, using building information modeling (BIM), data analytics, and machine learning. Her work spans BIM-based design coordination, the adaptive reuse of historic buildings, and data-driven analysis of housing and infrastructure conditions in Detroit, with support from the Nevada Department of Transportation, ELECTRI International, and Wayne State University. Dr. Koo teaches courses in construction engineering management, construction methods, building information modeling, and construction safety, and received the Excellence in Teaching Award from both the Department of Civil and Environmental Engineering and the College of Engineering. She received her Ph.D. in Civil Engineering from The University of Texas at Austin and is a LEED Accredited Professional (BD+C).</p>
   </div>
 </section>
 
@@ -334,14 +238,6 @@ table.alumni .now{font-size:13px;color:var(--muted)}
   </div>
 </section>
 
-<section id="photos">
-  <div class="wrap">
-    <div class="sheet"><b>A-650</b><span>Photos</span></div>
-    <h2>Photos</h2>
-    <div class="gallery"><figure><img src="group.jpg" alt="Lab seminar, October 2025" loading="lazy"><figcaption>Lab seminar, October 2025</figcaption></figure><figure><img src="group2.jpg" alt="Dinner after the lab seminar, October 2025" loading="lazy"><figcaption>Dinner after the lab seminar, October 2025</figcaption></figure><figure><img src="group3.jpg" alt="Thanksgiving gathering, 2025" loading="lazy"><figcaption>Thanksgiving gathering, 2025</figcaption></figure></div>
-  </div>
-</section>
-
 <section id="contact">
   <div class="wrap">
     <div class="sheet"><b>A-700</b><span>Contact</span></div>
@@ -354,25 +250,12 @@ table.alumni .now{font-size:13px;color:var(--muted)}
   </div>
 </section>
 </div>
-
-<div id="profile" hidden>
-  <div class="wrap" id="profileBody"></div>
-</div>
 </main>
 
-<footer><div class="wrap">© 2026 Koo Research Group · Wayne State University</div></footer>
+<footer><div class="wrap">© 2026 Koo Research Group · Wayne State University · hjkoo@wayne.edu</div></footer>
 
 <script>
 const ME = "Koo, H. J.";
-const projects = [
- ["2026–2028","Study of real-time concrete strength measurements and monitoring systems that conform to AASHTO T 412-24","Nevada Department of Transportation · PI: Myrsini Maglogianni · Co-PI: Hyun Jeong Koo"],
- ["2026–2027","Human-AI Decision Support for Building Reuse Planning","University Research Grant, Wayne State University · PI: Hyun Jeong Koo"],
- ["2026–2027","AI-Powered Risk Assessment and Prioritization Tool for Bridge Infrastructure","Technology Commercialization, Wayne State University · PI: Hyun Jeong Koo"],
- ["2024","Exploring the Value of Early Electrical Contractors Involvement","ELECTRI International · PI: Hyun Jeong Koo"],
- ["2023–2024","Remote Visual Inspection of Historic Buildings by Leveraging Novel View Synthesis","Richard Barber Interdisciplinary Research Program · PI: Hyun Jeong Koo · Co-PI: Zhizhong Han"],
- ["2023","Early Electrical Contractors Involvement: Benefits, Barriers, and Selection Criteria","ELECTRI International · PI: Hyun Jeong Koo"],
- ["2022–2023","Analysis of Project Specifications for Defect Prevention","University Research Grant, Wayne State University · PI: Hyun Jeong Koo"]
-];
 const pubs = {
  journal:[
   ["Koo, H. J., Karim, N., & Gautam, A. (2026). A cost-based decision framework for material reuse in building adaptation projects.","Construction Management and Economics","10.1080/01446193.2026.2723754"],
@@ -417,28 +300,26 @@ const alumni = [
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const initials = n => n.split(" ").filter(Boolean).map(w=>w[0]).slice(0,2).join("");
 
-document.getElementById("projectRows").innerHTML = projects.map(([y,t,m]) =>
- `<div class="row"><div class="yr">${y}</div><div><h3>${esc(t)}</h3><div class="meta">${esc(m)}</div></div></div>`).join("");
 
 const yearOf = c => +(c.match(/\((\d{4})\)/)||[0,0])[1];
 const allPubs = [...pubs.journal.map(x=>[...x,0]), ...pubs.conference.map(x=>[...x,1])]
  .sort((a,b)=> yearOf(b[0])-yearOf(a[0]) || a[3]-b[3]);
 let lastY = null;
-document.getElementById("pubList").innerHTML = allPubs.map((p,i)=>{
+if(document.getElementById("pubList")) document.getElementById("pubList").innerHTML = allPubs.map((p,i)=>{
  const [cite, venue, doi, conf] = p;
  const y = yearOf(cite);
  const head = y!==lastY ? `<li class="yh" aria-hidden="true">${y}</li>` : "";
  lastY = y;
  const c = esc(cite).replace(esc(ME), `<span class="me">${esc(ME)}</span>`);
  const d = doi ? `<div class="doi"><a href="https://doi.org/${encodeURI(doi)}">doi.org/${esc(doi)}</a></div>` : "";
- const tag = conf ? ` <span class="ptag">Conference</span>` : "";
+ const tag = "";
  return head + `<li><span class="n">[${allPubs.length - i}]</span><div>${c} <span class="venue">${esc(venue)}</span>.${tag}${d}</div></li>`;
 }).join("");
 
-document.getElementById("peopleGroups").innerHTML = current.map(grp =>
+if(document.getElementById("peopleGroups")) document.getElementById("peopleGroups").innerHTML = current.map(grp =>
  `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
   `<a class="person" href="#p-${p.id}"><div class="avatar" aria-hidden="true">${initials(p.name)}</div><div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
-document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
+if(document.getElementById("alumniRows")) document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
  `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
 
 function renderProfile(p){
@@ -465,6 +346,7 @@ function renderProfile(p){
 }
 const flat = current.flatMap(g=>g.list).map((p,i)=>({...p, idx:i+1}));
 function route(){
+ if(!document.getElementById("profile")) return;
  const h = location.hash.replace("#","");
  const p = flat.find(x=>"p-"+x.id===h);
  document.getElementById("home").hidden = !!p;
@@ -475,6 +357,5 @@ function route(){
 window.addEventListener("hashchange", route);
 route();
 </script>
-
 </body>
 </html>
