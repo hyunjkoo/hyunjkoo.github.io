@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Koo Research Group, Construction Engineering and Management, Wayne State University. BIM, machine learning, construction risk, and material reuse in building renovation.">
-<title>Koo Research Group</title>
+<title>Koo Research Group · Wayne State University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400&display=swap">
@@ -194,6 +194,20 @@ table.alumni{font-size:15px}
 .pi .edu{font-size:14.5px}
 .role{font-size:15.5px}
 
+.hero .lede{font-size:17px}
+.hero .lede strong{font-weight:600;color:var(--accent)}
+
+.pi .edu li{display:grid;gap:0;grid-template-columns:none}
+.pi .edu .deg{font-weight:600}
+.pi .edu .sch{color:var(--muted);white-space:nowrap}
+.hero-grid{grid-template-columns:1.4fr 1fr}
+@media (max-width:700px){.pi .edu .sch{white-space:normal}}
+
+.pibio{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;align-items:start}
+.pibio img{width:120px;height:140px;object-fit:cover;border-radius:4px}
+.pibio h3{margin-bottom:6px}
+@media (max-width:700px){.pibio{grid-template-columns:minmax(0,1fr)}}
+
 nav a.active{color:var(--accent);font-weight:700}
 </style>
 </head>
@@ -220,28 +234,20 @@ nav a.active{color:var(--accent);font-weight:700}
     <div>
       <h1 class="htitle">Koo Research Group</h1>
       <div class="haffil"><span class="prog">Construction Engineering and Management Program</span><br>Department of Civil and Environmental Engineering · Wayne State University</div>
-      <p class="lede">We develop data-driven methods to reduce risk and waste across the life of buildings and infrastructure. Our group integrates building information modeling (BIM), machine learning, and life cycle assessment to detect design defects before construction, prioritize coordination risks, and support material reuse decisions in the renovation of existing buildings and aging urban infrastructure.</p>
+      <p class="lede">Our group studies how to <strong>improve decisions across the life cycle of buildings and infrastructure</strong> to extend the service life of existing assets, manage emerging risks, and advance a circular and resilient built environment. We integrate building information modeling (BIM), machine learning, and life cycle assessment (LCA) to detect design defects and coordination conflicts, evaluate environmental impacts, and enable material reuse in the renovation of existing buildings and aging urban infrastructure.</p>
       <ul class="tags"><li>BIM</li><li>Construction Risk Management</li><li>Design Quality</li><li>Adaptive Reuse</li><li>Circular Economy</li><li>Life Cycle Assessment</li><li>Machine Learning</li></ul>
     </div>
     <div class="pi">
       <img class="hshot" src="koo.jpg" alt="Hyun Jeong Koo" width="150" height="175">
       <div class="pname">Hyun Jeong Koo, Ph.D., LEED AP BD+C</div>
-      <div class="role">Assistant Professor, Civil and Environmental Engineering</div>
+      <div class="role">Assistant Professor, Civil and Environmental Engineering<br>Wayne State University</div>
       <ul class="edu">
-        <li><span>Ph.D., Civil Engineering, The University of Texas at Austin</span></li>
-        <li><span>M.S., Civil Engineering, University of Illinois at Urbana-Champaign</span></li>
-        <li><span>B.S., Architectural Engineering, Hanyang University</span></li>
+        <li><span class="deg">Ph.D., Civil Engineering</span><span class="sch">The University of Texas at Austin</span></li>
+        <li><span class="deg">M.S., Civil Engineering</span><span class="sch">University of Illinois at Urbana-Champaign</span></li>
+        <li><span class="deg">B.S., Architectural Engineering</span><span class="sch">Hanyang University</span></li>
       </ul>
       <div class="links">hjkoo@wayne.edu · <a href="https://scholar.google.com/citations?user=WJ4DBQEAAAAJ">Google Scholar</a> · <a href="https://orcid.org/0000-0003-1178-8609">ORCID</a> · <a href="https://www.linkedin.com/in/hyun-jeong-koo-1a1b88124/">LinkedIn</a></div>
     </div>
-  </div>
-</section>
-
-<section id="bio">
-  <div class="wrap">
-    <div class="sheet"><b>A-050</b><span>Biography</span></div>
-    <h2>Short Biography</h2>
-    <p class="bio">Dr. Hyun Jeong Koo is an Assistant Professor of Construction Engineering and Management in the Department of Civil and Environmental Engineering at Wayne State University. Her research examines design quality, construction risk, and material reuse in building renovation, using building information modeling (BIM), data analytics, and machine learning. Her work spans BIM-based design coordination, the adaptive reuse of historic buildings, and data-driven analysis of housing and infrastructure conditions in Detroit. She received her Ph.D. in Civil Engineering from The University of Texas at Austin and is a LEED Accredited Professional (BD+C).</p>
   </div>
 </section>
 
