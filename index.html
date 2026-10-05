@@ -154,7 +154,7 @@ h1.htitle{font-family:var(--body);font-size:clamp(26px,3.6vw,36px);font-weight:9
 .tags li:nth-child(4n+4){color:var(--c4);background:var(--c4s)}
 section h2{display:flex;align-items:center;gap:8px}
 section h2::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--c1);flex:none}
-#research h2::before{background:var(--c1)} #publications h2::before{background:var(--c2)} #teaching h2::before{background:var(--c3)} #people h2::before{background:var(--c4)} #awards h2::before{background:var(--c1)} #service h2::before{background:var(--c2)} #projects h2::before{background:var(--c2)} #news h2::before{background:var(--c3)} #contact h2::before{background:var(--c4)} #bio h2::before{background:var(--c3)}
+#research h2::before{background:var(--c1)} #publications h2::before{background:var(--c2)} #teaching h2::before{background:var(--c3)} #people h2::before{background:var(--c4)} #awards h2::before{background:var(--c1)} #service h2::before{background:var(--c2)} #photos h2::before{background:var(--c3)} #projects h2::before{background:var(--c2)} #news h2::before{background:var(--c3)} #contact h2::before{background:var(--c4)} #bio h2::before{background:var(--c3)}
 ol.pubs li.yh{color:var(--c2)}
 .ptag{color:var(--c3);border-color:var(--c3s);background:var(--c3s)}
 #people .people:nth-of-type(2) .avatar{background:var(--c2s);color:var(--c2)}
@@ -165,11 +165,13 @@ ol.pubs li.yh{color:var(--c2)}
 .groupphoto img{width:100%;max-width:340px;height:auto;border-radius:6px;display:block}
 .groupphoto figcaption{font-size:13px;color:var(--muted)}
 
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
 .gallery figure{margin:0;display:grid;gap:5px;min-width:0}
 .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
 .gallery figcaption{font-size:12.5px;color:var(--muted)}
 @media (max-width:700px){.gallery{grid-template-columns:minmax(0,1fr)}}
+
+table.alumni .now{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -184,6 +186,7 @@ ol.pubs li.yh{color:var(--c2)}
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#people">People</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#photos">Photos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul></nav>
   </div>
@@ -302,7 +305,6 @@ ol.pubs li.yh{color:var(--c2)}
   <div class="wrap">
     <div class="sheet"><b>A-400</b><span>People</span></div>
     <h2>People</h2>
-    <div class="gallery"><figure><img src="group.jpg" alt="Lab seminar, October 2025" loading="lazy"><figcaption>Lab seminar, October 2025</figcaption></figure><figure><img src="group2.jpg" alt="Dinner after the lab seminar, October 2025" loading="lazy"><figcaption>Dinner after the lab seminar, October 2025</figcaption></figure><figure><img src="group3.jpg" alt="Group gathering" loading="lazy"><figcaption>Group gathering</figcaption></figure></div>
     <div id="peopleGroups"></div>
     <div class="group-label">Alumni</div>
     <div class="scroll"><table class="alumni"><tbody id="alumniRows"></tbody></table></div>
@@ -329,6 +331,14 @@ ol.pubs li.yh{color:var(--c2)}
       <div class="row"><div class="yr">Jul 2026</div><div>Paper published in <i>Journal of Construction Engineering and Management</i> on BIM coordination and clash resolution through risk and relevance analysis.</div></div>
       <div class="row"><div class="yr">2025–26</div><div>Dr. Koo received the Excellence in Teaching award from the Department of Civil and Environmental Engineering and the College of Engineering.</div></div>
     </div>
+  </div>
+</section>
+
+<section id="photos">
+  <div class="wrap">
+    <div class="sheet"><b>A-650</b><span>Photos</span></div>
+    <h2>Photos</h2>
+    <div class="gallery"><figure><img src="group.jpg" alt="Lab seminar, October 2025" loading="lazy"><figcaption>Lab seminar, October 2025</figcaption></figure><figure><img src="group2.jpg" alt="Dinner after the lab seminar, October 2025" loading="lazy"><figcaption>Dinner after the lab seminar, October 2025</figcaption></figure><figure><img src="group3.jpg" alt="Thanksgiving gathering, 2025" loading="lazy"><figcaption>Thanksgiving gathering, 2025</figcaption></figure></div>
   </div>
 </section>
 
@@ -401,7 +411,7 @@ const current = [
 const alumni = [
  ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025"],
  ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025"],
- ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025"],
+ ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025","Construction Maintenance Engineer, Charter County of Wayne"],
  ["Swetha Saka","M.S., Civil and Environmental Engineering","2022"]
 ];
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -428,8 +438,8 @@ document.getElementById("pubList").innerHTML = allPubs.map((p,i)=>{
 document.getElementById("peopleGroups").innerHTML = current.map(grp =>
  `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
   `<a class="person" href="#p-${p.id}"><div class="avatar" aria-hidden="true">${initials(p.name)}</div><div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
-document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y]) =>
- `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}</td><td>${y}</td></tr>`).join("");
+document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
+ `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
 
 function renderProfile(p){
  const all = [...pubs.journal.map(x=>[...x,"Journal"]), ...pubs.conference.map(x=>[...x,"Conference"])];
