@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Koo Research Group, Construction Engineering and Management, Wayne State University. BIM, machine learning, construction risk, and material reuse in building renovation.">
+<title>Research · Koo Research Group · Wayne State University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: compact single column, 920px, small type, thin rules; minimal academic profile */
+:root{
+  --bg:#ffffff; --surface:#f6f8f7; --fg:#1d2422; --muted:#5f6b67; --line:#e2e6e4;
+  --accent:#0d5c4a; --accent-soft:#e6f0ec; --mark:#9a6d1c;
+  --c1:#0d5c4a; --c1s:#e6f0ec; --c2:#2c5a8c; --c2s:#e7eef7; --c3:#9a6418; --c3s:#f7efe2; --c4:#7a3b66; --c4s:#f4e8f0;
+  --body:"Merriweather",Georgia,"Times New Roman",serif;
+  --display:var(--body);
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121615; --surface:#191f1d; --fg:#e4e9e7; --muted:#9aa6a2; --line:#2a322f;
+  --accent:#6cc7ad; --accent-soft:#1c2b26; --mark:#d4a656; --c1:#6cc7ad; --c1s:#1c2b26; --c2:#8db8e8; --c2s:#1a2433; --c3:#e0ae5c; --c3s:#2c2416; --c4:#d99cc6; --c4s:#2e1d29; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121615; --surface:#191f1d; --fg:#e4e9e7; --muted:#9aa6a2; --line:#2a322f;
+  --accent:#6cc7ad; --accent-soft:#1c2b26; --mark:#d4a656; --c1:#6cc7ad; --c1s:#1c2b26; --c2:#8db8e8; --c2s:#1a2433; --c3:#e0ae5c; --c3s:#2c2416; --c4:#d99cc6; --c4s:#2e1d29; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:14.5px;line-height:1.65;margin:0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:920px;margin:0 auto;padding-inline:20px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:15px;color:var(--fg)}
+.brand span{color:var(--accent)}
+.brand:hover{text-decoration:none}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:2px 16px;margin:0;padding:0}
+nav a{font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--accent);text-decoration:none}
+section{padding-block:26px;border-bottom:1px solid var(--line)}
+.sheet{display:none}
+h1,h2,h3{margin:0;font-family:var(--body);text-wrap:balance}
+h1{font-size:21px;font-weight:700;line-height:1.3}
+h2{font-size:17px;font-weight:700;margin-bottom:14px;color:var(--accent);letter-spacing:.01em}
+h3{font-size:15px;font-weight:600;line-height:1.4}
+.hero{padding-block:28px 24px}
+.profile{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:start}
+.profile>*{min-width:0}
+.headshot{width:150px;height:175px;object-fit:cover;border-radius:4px;display:block;max-width:100%}
+.pinfo{display:grid;gap:4px}
+.role{color:var(--muted);font-size:14.5px}
+.links{font-size:14px}
+.edu{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:2px;font-size:14px}
+.edu li{display:flex;justify-content:space-between;gap:12px}
+.edu .mono{color:var(--muted);font-size:12.5px;font-family:var(--mono)}
+.lede{margin:18px 0 0;font-size:15px;max-width:none}
+.tags{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-size:12.5px;color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:2px 8px}
+.mono{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.bio{margin:0}
+.themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.theme{display:grid;gap:4px;align-content:start}
+.theme .tag{display:none}
+.theme p{margin:0;font-size:14px;color:var(--fg)}
+.theme ul{margin:2px 0 0;padding-left:16px;color:var(--muted);font-size:13.5px}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:90px minmax(0,1fr);gap:14px;padding-block:8px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .yr{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:2px}
+.row .meta{color:var(--muted);font-size:13.5px}
+ol.pubs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ol.pubs li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:8px;font-size:14px}
+ol.pubs li.yh{display:block;font-weight:700;font-size:14px;color:var(--fg);margin-top:8px;padding-bottom:2px;border-bottom:1px solid var(--line)}
+ol.pubs li.yh:first-child{margin-top:0}
+ol.pubs .n{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:1px}
+ol.pubs .me{font-weight:600}
+ol.pubs .venue{font-style:italic}
+ol.pubs .doi{font-family:var(--mono);font-size:12px;word-break:break-all}
+.ptag{font-size:11px;color:var(--mark);border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-left:4px;white-space:nowrap}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+.group-label{font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 8px}
+.group-label:first-child{margin-top:0}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.person{border:1px solid var(--line);border-radius:4px;padding:10px 12px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;color:var(--fg)}
+.person:hover{border-color:var(--accent);text-decoration:none}
+.avatar{border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700}
+.person .avatar{width:36px;height:36px;font-size:13px}
+.person .pn{font-weight:600;font-size:14px;line-height:1.3}
+.person .pr{font-size:12px;color:var(--muted);font-family:var(--mono)}
+table.alumni{width:100%;border-collapse:collapse;font-size:14px}
+table.alumni td{padding:5px 8px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+table.alumni td:last-child{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap;text-align:right}
+.scroll{overflow-x:auto}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:14px}
+ul.plain li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:4px}
+ul.plain .mono{color:var(--muted)}
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;font-size:14px}
+.contact div{display:grid;gap:2px}
+.contact .k{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+footer{padding-block:18px;color:var(--muted);font-size:13px}
+#profile{padding-block:28px}
+.back{font-size:14px}
+.prof-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:center;margin:16px 0 20px}
+.prof-head .avatar{width:72px;height:72px;font-size:24px}
+.prof-head h1{font-size:21px!important}
+.affil{color:var(--muted);font-size:14px}
+.prof-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px}
+.prof-grid h2{font-size:16px!important;margin:0 0 8px!important}
+.prof-grid h2+*{margin-bottom:18px}
+.placeholder{border:1px dashed var(--line);border-radius:4px;padding:10px;color:var(--muted);font-size:13.5px}
+dl.facts{margin:0;display:grid;gap:8px;font-size:14px}
+dl.facts dt{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+dl.facts dd{margin:0}
+@media (max-width:700px){
+  .themes,.contact,.prof-grid{grid-template-columns:minmax(0,1fr)}
+  .profile{grid-template-columns:100px minmax(0,1fr);gap:16px}
+  .headshot{width:100px;height:117px}
+  .edu li{flex-direction:column;gap:0}
+  .row{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+
+/* first page: original hero layout */
+.hero{padding-block:56px 48px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center}
+.hero-grid>*{min-width:0}
+.hsheet{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:12px;margin-bottom:12px}
+.hsheet b{color:var(--accent);font-weight:400}
+h1.htitle{font-family:var(--body);font-size:clamp(26px,3.6vw,36px);font-weight:900;line-height:1.02;letter-spacing:-.02em;color:var(--fg)}
+.haffil{color:var(--muted);margin-top:8px;font-size:13px;line-height:1.6}
+.haffil .prog{color:var(--accent);font-weight:700;font-size:13.5px}
+.hero .lede{font-size:17px;margin-top:18px;max-width:62ch}
+.pi{border-left:3px solid var(--accent);padding:2px 0 2px 18px;display:grid;gap:6px}
+.hshot{width:150px;height:175px;object-fit:cover;border-radius:4px;display:block;max-width:100%}
+.pname{font-family:var(--body);font-weight:600;font-size:17px;line-height:1.3;margin-top:4px}
+.pi .edu{margin-top:4px;font-size:13.5px}
+.pi .edu li{border-top:1px solid var(--line);padding-top:4px}
+@media (max-width:700px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:28px}.hero{padding-block:36px 32px}.hshot{width:130px;height:152px}}
+
+/* research area boxes */
+.themes{gap:14px}
+.theme{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:6px;padding:16px 16px 14px}
+.theme h3{margin-bottom:2px}
+
+/* color accents */
+.theme:nth-child(1){border-top-color:var(--c1)} .theme:nth-child(1) h3{color:var(--c1)}
+.theme:nth-child(2){border-top-color:var(--c2)} .theme:nth-child(2) h3{color:var(--c2)}
+.theme:nth-child(3){border-top-color:var(--c3)} .theme:nth-child(3) h3{color:var(--c3)}
+.tags li:nth-child(4n+1){color:var(--c1);background:var(--c1s)}
+.tags li:nth-child(4n+2){color:var(--c2);background:var(--c2s)}
+.tags li:nth-child(4n+3){color:var(--c3);background:var(--c3s)}
+.tags li:nth-child(4n+4){color:var(--c4);background:var(--c4s)}
+section h2{display:flex;align-items:center;gap:8px}
+section h2::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--c1);flex:none}
+#research h2::before{background:var(--c1)} #publications h2::before{background:var(--c2)} #teaching h2::before{background:var(--c3)} #people h2::before{background:var(--c4)} #awards h2::before{background:var(--c1)} #service h2::before{background:var(--c2)} #photos h2::before{background:var(--c3)} #projects h2::before{background:var(--c2)} #news h2::before{background:var(--c3)} #contact h2::before{background:var(--c4)} #bio h2::before{background:var(--c3)}
+ol.pubs li.yh{color:var(--c2)}
+.ptag{color:var(--c3);border-color:var(--c3s);background:var(--c3s)}
+#people .people:nth-of-type(2) .avatar{background:var(--c2s);color:var(--c2)}
+#people .people:nth-of-type(4) .avatar{background:var(--c3s);color:var(--c3)}
+.row .yr{color:var(--c3)}
+
+.groupphoto{margin:0 0 18px;display:grid;justify-items:start;gap:6px}
+.groupphoto img{width:100%;max-width:340px;height:auto;border-radius:6px;display:block}
+.groupphoto figcaption{font-size:13px;color:var(--muted)}
+
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.gallery figure{margin:0;display:grid;gap:5px;min-width:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
+.gallery figcaption{font-size:12.5px;color:var(--muted)}
+@media (max-width:700px){.gallery{grid-template-columns:minmax(0,1fr)}}
+
+table.alumni .now{font-size:13px;color:var(--muted)}
+
+/* larger text + photo on left */
+body{font-size:16px}
+nav a{font-size:15px}
+.brand{font-size:16px}
+h2{font-size:19px}
+h3{font-size:16.5px}
+.hero .lede{font-size:18px}
+.haffil{font-size:14px}
+.haffil .prog{font-size:14.5px}
+.tags li{font-size:13.5px}
+.theme p{font-size:15px}
+.theme ul{font-size:14.5px}
+.row .meta{font-size:14.5px}
+ol.pubs li{font-size:15px}
+ul.plain{font-size:15.5px}
+table.alumni{font-size:15px}
+.contact{font-size:15.5px}
+.person .pn{font-size:15px}
+.pi .edu{font-size:14.5px}
+.role{font-size:15.5px}
+
+.hero .lede{font-size:17px}
+.hero .lede strong{font-weight:600;color:var(--accent)}
+
+.pi .edu li{display:grid;gap:0;grid-template-columns:none}
+.pi .edu .deg{font-weight:600}
+.pi .edu .sch{color:var(--muted);white-space:nowrap}
+.hero-grid{grid-template-columns:1.4fr 1fr}
+@media (max-width:700px){.pi .edu .sch{white-space:normal}}
+
+.pibio{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;align-items:start}
+.pibio img{width:120px;height:140px;object-fit:cover;border-radius:4px}
+.pibio h3{margin-bottom:6px}
+@media (max-width:700px){.pibio{grid-template-columns:minmax(0,1fr)}}
+
+nav a.active{color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Koo <span>Research Group</span></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active" aria-current="page">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="main">
+<div id="home">
+<section id="research">
+  <div class="wrap">
+    <div class="sheet"><b>A-100</b><span>Research</span></div>
+    <h2>Research Areas</h2>
+    <div class="themes">
+      <div class="theme">
+        <div class="tag">Design quality · BIM</div>
+        <h3>BIM coordination and design quality</h3>
+        <p>How design defects arise, how they can be detected early, and how BIM coordination can focus on the clashes that matter.</p>
+        <ul><li>Design defect leading indicators and complexity</li><li>Machine learning for clash relevance and risk prediction</li></ul>
+      </div>
+      <div class="theme">
+        <div class="tag">Renovation · Circular economy</div>
+        <h3>Adaptive reuse and material reuse</h3>
+        <p>Risk and decision making in historic building renovation, and methods to quantify which materials can be recovered and reused.</p>
+        <ul><li>Challenges in adaptive reuse of historic buildings</li><li>Cost-based material reuse decisions; BIM–LCA for hazardous materials</li></ul>
+      </div>
+      <div class="theme">
+        <div class="tag">Data · Communities</div>
+        <h3>Data-driven risk for infrastructure and communities</h3>
+        <p>Spatial and machine learning analysis of housing conditions, flood impacts, and infrastructure condition in urban settings such as Detroit and Flint.</p>
+        <ul><li>Housing characteristics, accessibility, and social vulnerability</li><li>Flood damage prediction; bridge risk prioritization</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <div class="sheet"><b>A-200</b><span>Publications</span></div>
+    <h2>Publications</h2>
+    <ol class="pubs" id="pubList"></ol>
+  </div>
+</section>
+</div>
+</main>
+
+<footer><div class="wrap">© 2026 Koo Research Group · Wayne State University · hjkoo@wayne.edu</div></footer>
+
+<script>
+const ME = "Koo, H. J.";
+const pubs = {
+ journal:[
+  ["Koo, H. J., Karim, N., & Gautam, A. (2026). A cost-based decision framework for material reuse in building adaptation projects.","Construction Management and Economics","10.1080/01446193.2026.2723754"],
+  ["Koo, H. J., Guerra, B., Saka, S., & Leite, F. (2026). Streamlining BIM coordination and clash resolution through risk and relevance analysis.","Journal of Construction Engineering and Management, 152(7)","10.1061/JCEMD4.COENG-17676"],
+  ["Sadler, R. C., Koo, H. J., Allamy, B., & McElmurry, S. P. (2025). Assessing the impact of right-sizing Flint’s drinking water distribution system.","PLOS Water","10.1371/journal.pwat.0000277"],
+  ["Koo, H. J., & Skvarce, F. (2025). Benefits and challenges of early electrical contractor involvement in construction projects.","Buildings, 15(4), 637","10.3390/buildings15040637"],
+  ["Koo, H. J., Kelly, D., & Deman, D. (2024). Risk assessment of the challenges in the adaptive reuse of historic buildings.","Journal of Construction Engineering and Management, 150(9), 04024119","10.1061/JCEMD4.COENG-14569"],
+  ["Kelly, D., & Koo, H. J. (2024). Challenges managing large historic building renovations: Lessons learned from Detroit, Michigan. Editor’s Choice.","Journal of Construction Engineering and Management, 150(2), 04023015","10.1061/JCEMD4.COENG-13555"],
+  ["Guerra, B., Koo, H. J., Caldas, C., & Leite, F. (2023). Prediction of waste diversion and identification of trends in construction and demolition waste data using data mining.","International Journal of Construction Management","10.1080/15623599.2023.2235106"],
+  ["Koo, H. J., O’Connor, J. T., & Sprouse, R. (2023). Analyzing the characteristics of design defect leading indicators on construction projects.","International Journal of Construction Management","10.1080/15623599.2023.2216111"],
+  ["Pillala, S., Korkmaz, K., & Koo, H. J. (2023). Analysis of current status of enacted legislation on autonomous vehicles in the United States.","European Journal of Engineering and Technology Research, 8(3), 82–89","10.24018/ejeng.2023.8.3.2981"],
+  ["Koo, H. J., & O’Connor, J. T. (2022). A strategy for building design quality improvement through BIM capability analysis.","Journal of Construction Engineering and Management, 148(8), 04022066","10.1061/(ASCE)CO.1943-7862.0002311"],
+  ["Koo, H. J., & O’Connor, J. T. (2021). BIM as a tool for prevention of design defects.","Construction Innovation, 21(4), 655–672","10.1108/CI-02-2021-0033"],
+  ["Koo, H. J., & O’Connor, J. T. (2021). Complexity analysis of design deliverable defects on building projects.","Journal of Management in Engineering, 37(3), 04021014","10.1061/(ASCE)ME.1943-5479.0000900"],
+  ["O’Connor, J. T., & Koo, H. J. (2021). A proactive design quality assessment tool for building projects.","Journal of Construction Engineering and Management, 147(2), 04020174","10.1061/(ASCE)CO.1943-7862.0001960"],
+  ["O’Connor, J. T., & Koo, H. J. (2020). Analyzing the quality problems and defects of design deliverables on building projects.","Journal of Architectural Engineering, 26(4), 04020034","10.1061/(ASCE)AE.1943-5568.0000418"]
+ ],
+ conference:[
+  ["Koo, H. J., & Demetracopoulou, V. (2026). Exploring flood vulnerability patterns and residential flood impacts in urban environment.","10th International Conference on Engineering for Critical Infrastructure (EC-3 2026)",""],
+  ["Karim, N., Koo, H. J., & Guerra, B. (2025). BIM-driven automatic quantification of material reuse in renovation projects.","10th Joint CRC/CSCE Construction Specialty Conference",""],
+  ["Koo, H. J., Demetracopoulou, V., & Atilola, M. (2025). Assessing the impact of housing characteristics and multimodal accessibility on social vulnerability in the City of Detroit.","10th Joint CRC/CSCE Construction Specialty Conference",""],
+  ["Oduro, S., Koo, H. J., & Guerra, B. (2025). Comparative analysis of machine learning algorithms for clash relevance and risk level prediction in BIM design coordination.","International Conference on Computing in Civil Engineering (i3CE), 638–648",""],
+  ["Koo, H. J., & Guerra, B. (2024). Clash relevance prediction in BIM model for design coordination using artificial neural network.","Construction Research Congress",""],
+  ["Koo, H. J., & Kelly, D. (2024). Investigating perception variances among project participants concerning the challenges of renovating historic buildings.","Construction Research Congress",""],
+  ["Korkmaz, K., & Koo, H. J. (2022). Adaptation of autonomous vehicles into highways and roads.","EPiC Series in Built Environment, 3, 425–433 (ASC 2022)",""]
+ ]
+};
+const current = [
+ {g:"Ph.D. students", list:[
+  {id:"oduro", name:"Samuel Oduro", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2024–present", key:"Oduro, S."},
+  {id:"gautam", name:"Anil Gautam", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2025–present", key:"Gautam, A."}]},
+ {g:"Master’s students", list:[
+  {id:"skvarce", name:"Frank Skvarce", prog:"M.S., Civil and Environmental Engineering", yrs:"2023–present", key:"Skvarce, F."},
+  {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]}
+];
+const alumni = [
+ ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025"],
+ ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025"],
+ ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025","Construction Maintenance Engineer, Charter County of Wayne"],
+ ["Swetha Saka","M.S., Civil and Environmental Engineering","2022"]
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const initials = n => n.split(" ").filter(Boolean).map(w=>w[0]).slice(0,2).join("");
+
+
+const yearOf = c => +(c.match(/\((\d{4})\)/)||[0,0])[1];
+const allPubs = [...pubs.journal.map(x=>[...x,0]), ...pubs.conference.map(x=>[...x,1])]
+ .sort((a,b)=> yearOf(b[0])-yearOf(a[0]) || a[3]-b[3]);
+let lastY = null;
+if(document.getElementById("pubList")) document.getElementById("pubList").innerHTML = allPubs.map((p,i)=>{
+ const [cite, venue, doi, conf] = p;
+ const y = yearOf(cite);
+ const head = y!==lastY ? `<li class="yh" aria-hidden="true">${y}</li>` : "";
+ lastY = y;
+ const c = esc(cite).replace(esc(ME), `<span class="me">${esc(ME)}</span>`);
+ const d = doi ? `<div class="doi"><a href="https://doi.org/${encodeURI(doi)}">doi.org/${esc(doi)}</a></div>` : "";
+ const tag = "";
+ return head + `<li><span class="n">[${allPubs.length - i}]</span><div>${c} <span class="venue">${esc(venue)}</span>.${tag}${d}</div></li>`;
+}).join("");
+
+if(document.getElementById("peopleGroups")) document.getElementById("peopleGroups").innerHTML = current.map(grp =>
+ `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
+  `<a class="person" href="#p-${p.id}"><div class="avatar" aria-hidden="true">${initials(p.name)}</div><div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
+if(document.getElementById("alumniRows")) document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
+ `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
+
+function renderProfile(p){
+ const all = [...pubs.journal.map(x=>[...x,"Journal"]), ...pubs.conference.map(x=>[...x,"Conference"])];
+ const mine = all.filter(x=>x[0].includes(p.key));
+ const pubHtml = mine.length
+  ? `<ol class="pubs">${mine.map((x,i)=>`<li><span class="n">${x[3].slice(0,4)}</span><div>${esc(x[0]).replace(esc(p.key),`<span class="me">${esc(p.key)}</span>`)} <span class="venue">${esc(x[1])}</span>.</div></li>`).join("")}</ol>`
+  : `<div class="placeholder">Publications will appear here.</div>`;
+ document.getElementById("profileBody").innerHTML = `
+  <a class="back" href="#people">← Back to People</a>
+  <div class="prof-head"><div class="avatar" aria-hidden="true">${initials(p.name)}</div>
+   <div><div class="sheet"><b>A-4${String(p.idx).padStart(2,"0")}</b><span>Group member</span></div><h1>${esc(p.name)}</h1><div class="affil">${esc(p.prog)} · ${esc(p.yrs)}</div></div></div>
+  <div class="prof-grid">
+   <div><h2 style="font-size:22px;margin-bottom:12px">About</h2>
+    <div class="placeholder">Biography and research focus to be provided by the student.</div>
+    <h2 style="font-size:22px;margin:32px 0 12px">Publications with the group</h2>${pubHtml}</div>
+   <div><dl class="facts">
+    <div><dt>Program</dt><dd>${esc(p.prog)}</dd></div>
+    <div><dt>Years in group</dt><dd>${esc(p.yrs)}</dd></div>
+    <div><dt>Advisor</dt><dd>Dr. Hyun Jeong Koo</dd></div>
+    <div><dt>Links</dt><dd class="placeholder" style="padding:10px">Email, LinkedIn, Google Scholar</dd></div>
+   </dl></div>
+  </div>`;
+}
+const flat = current.flatMap(g=>g.list).map((p,i)=>({...p, idx:i+1}));
+function route(){
+ if(!document.getElementById("profile")) return;
+ const h = location.hash.replace("#","");
+ const p = flat.find(x=>"p-"+x.id===h);
+ document.getElementById("home").hidden = !!p;
+ document.getElementById("profile").hidden = !p;
+ if(p){ renderProfile(p); window.scrollTo(0,0); }
+ else if(h){ const el = document.getElementById(h); if(el) el.scrollIntoView(); }
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
