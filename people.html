@@ -165,7 +165,7 @@ ol.pubs li.yh{color:var(--c2)}
 .groupphoto img{width:100%;max-width:340px;height:auto;border-radius:6px;display:block}
 .groupphoto figcaption{font-size:13px;color:var(--muted)}
 
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0}
 .gallery figure{margin:0;display:grid;gap:5px;min-width:0}
 .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
 .gallery figcaption{font-size:12.5px;color:var(--muted)}
@@ -208,6 +208,17 @@ table.alumni{font-size:15px}
 .pibio h3{margin-bottom:6px}
 @media (max-width:700px){.pibio{grid-template-columns:minmax(0,1fr)}}
 
+/* larger left column */
+.hero-grid{grid-template-columns:1.7fr 1fr}
+h1.htitle{font-size:clamp(30px,4.2vw,42px)}
+.haffil{font-size:15px}
+.haffil .prog{font-size:16px}
+.hero .lede{font-size:19px;line-height:1.65}
+.hero .tags li{font-size:14px}
+
+.gallery img.tall{object-position:center 20%}
+@media (max-width:700px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 nav a.active{color:var(--accent);font-weight:700}
 </style>
 </head>
@@ -245,7 +256,7 @@ nav a.active{color:var(--accent);font-weight:700}
 <section id="people">
   <div class="wrap">
     <div class="sheet"><b>A-400</b><span>People</span></div>
-    <h2>People</h2>
+    <h2>Students</h2>
     <div id="peopleGroups"></div>
     <div class="group-label">Alumni</div>
     <div class="scroll"><table class="alumni"><tbody id="alumniRows"></tbody></table></div>
@@ -257,7 +268,7 @@ nav a.active{color:var(--accent);font-weight:700}
   <div class="wrap">
     <div class="sheet"><b>A-650</b><span>Photos</span></div>
     <h2>Photos</h2>
-    <div class="gallery"><figure><img src="group.jpg" alt="Lab seminar, October 2025" loading="lazy"><figcaption>Lab seminar, October 2025</figcaption></figure><figure><img src="group2.jpg" alt="Dinner after the lab seminar, October 2025" loading="lazy"><figcaption>Dinner after the lab seminar, October 2025</figcaption></figure><figure><img src="group3.jpg" alt="Thanksgiving gathering, 2025" loading="lazy"><figcaption>Thanksgiving gathering, 2025</figcaption></figure></div>
+    <div class="gallery"><figure><img src="group.jpg" alt="Lab seminar, October 2025" loading="lazy"><figcaption>Lab seminar, October 2025</figcaption></figure><figure><img src="group2.jpg" alt="Dinner after the lab seminar, October 2025" loading="lazy"><figcaption>Dinner after the lab seminar, October 2025</figcaption></figure><figure><img src="group3.jpg" alt="Thanksgiving gathering, 2025" loading="lazy"><figcaption>Thanksgiving gathering, 2025</figcaption></figure><figure><img src="group4.jpg" alt="Drone survey fieldwork, Detroit, May 2024" loading="lazy"><figcaption>Drone survey fieldwork, Detroit, May 2024</figcaption></figure><figure><img src="i3ce.jpg" alt="ASCE i3CE 2025, New Orleans, May 2025" loading="lazy" class="tall"><figcaption>ASCE i3CE 2025, New Orleans, May 2025</figcaption></figure><figure><img src="poster.jpg" alt="WSU Graduate Research Symposium, February 2025" loading="lazy" class="tall"><figcaption>WSU Graduate Research Symposium, February 2025</figcaption></figure><figure><img src="grad2.jpg" alt="Commencement" loading="lazy"><figcaption>Commencement</figcaption></figure><figure><img src="grad1.jpg" alt="Commencement" loading="lazy" class="tall"><figcaption>Commencement</figcaption></figure><figure><img src="group5.jpg" alt="Group photo, Wayne State University" loading="lazy"><figcaption>Group photo, Wayne State University</figcaption></figure><figure><img src="group6.jpg" alt="Group outing" loading="lazy"><figcaption>Group outing</figcaption></figure></div>
   </div>
 </section>
 </div>
