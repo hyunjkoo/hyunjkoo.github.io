@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Koo Research Group, Construction Engineering and Management, Wayne State University. BIM, machine learning, construction risk, and material reuse in building renovation.">
-<title>Research · Koo Research Group · Wayne State University</title>
+<meta name="description" content="RiSC Lab (Risk-informed, Smart, and Circular Construction Lab), Construction Engineering and Management, Wayne State University. BIM, machine learning, construction risk, and material reuse in building renovation.">
+<title>Research · RiSC Lab · Wayne State University</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@400&display=swap">
@@ -103,8 +103,9 @@ ul.plain .mono{color:var(--muted)}
 footer{padding-block:18px;color:var(--muted);font-size:13px}
 #profile{padding-block:28px}
 .back{font-size:14px}
-.prof-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;align-items:center;margin:16px 0 20px}
-.prof-head .avatar{width:72px;height:72px;font-size:24px}
+.prof-head{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;align-items:center;margin:16px 0 20px}
+.prof-head .avatar{width:96px;height:96px;font-size:28px}
+.avatar{overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .prof-head h1{font-size:21px!important}
 .affil{color:var(--muted);font-size:14px}
 .prof-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px}
@@ -165,7 +166,7 @@ ol.pubs li.yh{color:var(--c2)}
 .groupphoto img{width:100%;max-width:340px;height:auto;border-radius:6px;display:block}
 .groupphoto figcaption{font-size:13px;color:var(--muted)}
 
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0}
 .gallery figure{margin:0;display:grid;gap:5px;min-width:0}
 .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
 .gallery figcaption{font-size:12.5px;color:var(--muted)}
@@ -211,10 +212,14 @@ table.alumni{font-size:15px}
 /* larger left column */
 .hero-grid{grid-template-columns:1.7fr 1fr}
 h1.htitle{font-size:clamp(30px,4.2vw,42px)}
+.hfull{font-size:18px;font-weight:600;color:var(--accent);margin:6px 0 4px}
 .haffil{font-size:15px}
 .haffil .prog{font-size:16px}
 .hero .lede{font-size:19px;line-height:1.65}
 .hero .tags li{font-size:14px}
+
+.gallery img.tall{object-position:center 20%}
+@media (max-width:700px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 nav a.active{color:var(--accent);font-weight:700}
 </style>
@@ -224,7 +229,7 @@ nav a.active{color:var(--accent);font-weight:700}
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="index.html">Koo <span>Research Group</span></a>
+    <a class="brand" href="index.html">Koo <span>Research Lab</span></a>
     <nav aria-label="Main"><ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html" class="active" aria-current="page">Research</a></li>
@@ -274,7 +279,7 @@ nav a.active{color:var(--accent);font-weight:700}
 </div>
 </main>
 
-<footer><div class="wrap">© 2026 Koo Research Group · Wayne State University · hjkoo@wayne.edu</div></footer>
+<footer><div class="wrap">© 2026 RiSC Lab · Wayne State University · hjkoo@wayne.edu</div></footer>
 
 <script>
 const ME = "Koo, H. J.";
@@ -307,19 +312,20 @@ const pubs = {
 };
 const current = [
  {g:"Ph.D. students", list:[
-  {id:"oduro", name:"Samuel Oduro", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2024–present", key:"Oduro, S."},
-  {id:"gautam", name:"Anil Gautam", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2025–present", key:"Gautam, A."}]},
+  {id:"oduro", name:"Samuel Oduro", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2024–present", key:"Oduro, S.", bio:"Samuel Oduro is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management. His research focuses on advancing artificial intelligence (AI), building information modeling (BIM), and life-cycle assessment (LCA) for safer, more sustainable, and data-driven decision-making in the built environment. His current doctoral research investigates hazardous-material management in the renovation of older buildings, integrating environmental assessment, BIM–LCA, and machine-learning approaches to support abatement planning for materials such as asbestos-containing materials, lead-based paint, and polychlorinated biphenyls. His broader research interests include construction safety, BIM-based risk analysis, environmental sustainability, and AI-enabled decision support. Through his research, he aims to develop practical and innovative approaches that improve the safety, sustainability, and efficiency of construction and renovation projects."},
+  {id:"gautam", name:"Anil Gautam", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2025–present", key:"Gautam, A.", photo:"gautam.jpg", bio:"Anil Gautam is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management under the supervision of Dr. Hyun Jeong Koo. His research interests include adaptive reuse of buildings, artificial intelligence (AI), and building information modeling (BIM), with a focus on how emerging technologies can contribute to more efficient and sustainable practices in the construction industry. He received his Bachelor of Engineering from Tribhuvan University, Nepal, in 2018, and his M.Tech. in Construction Engineering and Management from Manipal Academy of Higher Education, Dubai, U.A.E. Before pursuing his Ph.D., he worked for several years as a civil engineer in Nepal and the United Arab Emirates. Outside of research, he enjoys programming in HTML, Java, and Python, traveling, and playing console games."}]},
  {g:"Master’s students", list:[
   {id:"skvarce", name:"Frank Skvarce", prog:"M.S., Civil and Environmental Engineering", yrs:"2023–present", key:"Skvarce, F."},
   {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]}
 ];
 const alumni = [
- ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025"],
- ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025"],
+ ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025","Project Manager, Intertek"],
+ ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025","Project Engineer, Sachse Construction"],
  ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025","Construction Maintenance Engineer, Charter County of Wayne"],
  ["Swetha Saka","M.S., Civil and Environmental Engineering","2022"]
 ];
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const avatar = p => `<div class="avatar" aria-hidden="true">${p.photo ? `<img src="${p.photo}" alt="">` : initials(p.name)}</div>`;
 const initials = n => n.split(" ").filter(Boolean).map(w=>w[0]).slice(0,2).join("");
 
 
@@ -340,7 +346,7 @@ if(document.getElementById("pubList")) document.getElementById("pubList").innerH
 
 if(document.getElementById("peopleGroups")) document.getElementById("peopleGroups").innerHTML = current.map(grp =>
  `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
-  `<a class="person" href="#p-${p.id}"><div class="avatar" aria-hidden="true">${initials(p.name)}</div><div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
+  `<a class="person" href="#p-${p.id}">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
 if(document.getElementById("alumniRows")) document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
  `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
 
@@ -348,15 +354,15 @@ function renderProfile(p){
  const all = [...pubs.journal.map(x=>[...x,"Journal"]), ...pubs.conference.map(x=>[...x,"Conference"])];
  const mine = all.filter(x=>x[0].includes(p.key));
  const pubHtml = mine.length
-  ? `<ol class="pubs">${mine.map((x,i)=>`<li><span class="n">${x[3].slice(0,4)}</span><div>${esc(x[0]).replace(esc(p.key),`<span class="me">${esc(p.key)}</span>`)} <span class="venue">${esc(x[1])}</span>.</div></li>`).join("")}</ol>`
+  ? `<ol class="pubs">${mine.map((x,i)=>`<li><span class="n">${(x[0].match(/\((\d{4})\)/)||["",""])[1]}</span><div>${esc(x[0]).replace(esc(p.key),`<span class="me">${esc(p.key)}</span>`)} <span class="venue">${esc(x[1])}</span>.</div></li>`).join("")}</ol>`
   : `<div class="placeholder">Publications will appear here.</div>`;
  document.getElementById("profileBody").innerHTML = `
   <a class="back" href="#people">← Back to People</a>
-  <div class="prof-head"><div class="avatar" aria-hidden="true">${initials(p.name)}</div>
+  <div class="prof-head">${avatar(p)}
    <div><div class="sheet"><b>A-4${String(p.idx).padStart(2,"0")}</b><span>Group member</span></div><h1>${esc(p.name)}</h1><div class="affil">${esc(p.prog)} · ${esc(p.yrs)}</div></div></div>
   <div class="prof-grid">
    <div><h2 style="font-size:22px;margin-bottom:12px">About</h2>
-    <div class="placeholder">Biography and research focus to be provided by the student.</div>
+    ${p.bio ? `<p>${esc(p.bio)}</p>` : `<div class="placeholder">Biography and research focus to be provided by the student.</div>`}
     <h2 style="font-size:22px;margin:32px 0 12px">Publications with the group</h2>${pubHtml}</div>
    <div><dl class="facts">
     <div><dt>Program</dt><dd>${esc(p.prog)}</dd></div>
