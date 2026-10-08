@@ -83,6 +83,7 @@ ol.pubs .doi{font-family:var(--mono);font-size:12px;word-break:break-all}
 .note{font-size:13.5px;color:var(--muted);margin-top:12px}
 .group-label{font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 8px}
 .group-label:first-child{margin-top:0}
+.sub-label{font-size:12px;font-weight:600;color:var(--muted);margin:10px 0 4px;padding-left:10px;border-left:2px solid var(--line, #ddd)}
 .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
 .person{border:1px solid var(--line);border-radius:4px;padding:10px 12px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;color:var(--fg)}
 .person:hover{border-color:var(--accent);text-decoration:none}
@@ -146,6 +147,15 @@ h1.htitle{font-family:var(--body);font-size:clamp(26px,3.6vw,36px);font-weight:9
 .theme h3{margin-bottom:2px}
 
 /* color accents */
+.thead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.thead h3{margin:0}
+.ticon{flex:0 0 56px;width:56px;height:56px;border-radius:12px;display:grid;place-items:center}
+.ticon svg{width:38px;height:38px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ticon .dot{fill:currentColor;stroke:none}
+.ticon circle.dot[r="6"]{fill:none;stroke:currentColor}
+.theme:nth-child(1) .ticon{color:var(--c1);background:var(--c1s)}
+.theme:nth-child(2) .ticon{color:var(--c2);background:var(--c2s)}
+.theme:nth-child(3) .ticon{color:var(--c3);background:var(--c3s)}
 .theme:nth-child(1){border-top-color:var(--c1)} .theme:nth-child(1) h3{color:var(--c1)}
 .theme:nth-child(2){border-top-color:var(--c2)} .theme:nth-child(2) h3{color:var(--c2)}
 .theme:nth-child(3){border-top-color:var(--c3)} .theme:nth-child(3) h3{color:var(--c3)}
@@ -247,7 +257,7 @@ nav a.active{color:var(--accent);font-weight:700}
     <div>
       <h1 class="htitle">Risk-informed, Smart, and Circular Construction (RiSC) Lab</h1>
       <div class="haffil"><span class="prog">Construction Engineering and Management Program</span><br>Department of Civil and Environmental Engineering · Wayne State University</div>
-      <p class="lede">Our group studies how to <strong>improve decisions across the life cycle of buildings and infrastructure</strong> to extend the service life of existing assets, manage emerging risks, and advance a circular and resilient built environment. We integrate building information modeling (BIM), machine learning, and life cycle assessment (LCA) to detect design defects and coordination conflicts, evaluate environmental impacts, and enable material reuse in the renovation of existing buildings and aging urban infrastructure.</p>
+      <p class="lede">Our group studies how <strong>data-driven methods can support decisions in the design, renovation, and reuse of buildings and infrastructure</strong>, with the aim of extending the service life of existing assets, managing emerging risks, and advancing a circular and resilient built environment. We integrate building information modeling (BIM), machine learning, and life cycle assessment (LCA) to detect design defects and coordination conflicts, evaluate environmental impacts, and enable material reuse in the renovation of existing buildings and aging urban infrastructure.</p>
       <ul class="tags"><li>BIM</li><li>Construction Risk Management</li><li>Design Quality</li><li>Adaptive Reuse</li><li>Circular Economy</li><li>Life Cycle Assessment</li><li>Machine Learning</li></ul>
     </div>
     <div class="pi">
@@ -325,17 +335,26 @@ const pubs = {
 };
 const current = [
  {g:"Ph.D. students", list:[
-  {id:"oduro", name:"Samuel Oduro", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2024–present", key:"Oduro, S.", bio:"Samuel Oduro is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management. His research focuses on advancing artificial intelligence (AI), building information modeling (BIM), and life-cycle assessment (LCA) for safer, more sustainable, and data-driven decision-making in the built environment. His current doctoral research investigates hazardous-material management in the renovation of older buildings, integrating environmental assessment, BIM–LCA, and machine-learning approaches to support abatement planning for materials such as asbestos-containing materials, lead-based paint, and polychlorinated biphenyls. His broader research interests include construction safety, BIM-based risk analysis, environmental sustainability, and AI-enabled decision support. Through his research, he aims to develop practical and innovative approaches that improve the safety, sustainability, and efficiency of construction and renovation projects."},
+  {id:"oduro", name:"Samuel Oduro", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2024–present", key:"Oduro, S.", photo:"oduro.jpg", bio:"Samuel Oduro is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management. His research focuses on advancing artificial intelligence (AI), building information modeling (BIM), and life-cycle assessment (LCA) for safer, more sustainable, and data-driven decision-making in the built environment. His current doctoral research investigates hazardous-material management in the renovation of older buildings, integrating environmental assessment, BIM–LCA, and machine-learning approaches to support abatement planning for materials such as asbestos-containing materials, lead-based paint, and polychlorinated biphenyls. His broader research interests include construction safety, BIM-based risk analysis, environmental sustainability, and AI-enabled decision support. Through his research, he aims to develop practical and innovative approaches that improve the safety, sustainability, and efficiency of construction and renovation projects."},
   {id:"gautam", name:"Anil Gautam", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2025–present", key:"Gautam, A.", photo:"gautam.jpg", bio:"Anil Gautam is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management under the supervision of Dr. Hyun Jeong Koo. His research interests include adaptive reuse of buildings, artificial intelligence (AI), and building information modeling (BIM), with a focus on how emerging technologies can contribute to more efficient and sustainable practices in the construction industry. He received his Bachelor of Engineering from Tribhuvan University, Nepal, in 2018, and his M.Tech. in Construction Engineering and Management from Manipal Academy of Higher Education, Dubai, U.A.E. Before pursuing his Ph.D., he worked for several years as a civil engineer in Nepal and the United Arab Emirates. Outside of research, he enjoys programming in HTML, Java, and Python, traveling, and playing console games."}]},
  {g:"Master’s students", list:[
   {id:"skvarce", name:"Frank Skvarce", prog:"M.S., Civil and Environmental Engineering", yrs:"2023–present", key:"Skvarce, F."},
-  {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]}
+  {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]},
+ {g:"Undergraduate research assistants", list:[
+  {id:"aasif", name:"Mahammed Aashir Aasif", prog:"B.S., Chemical Engineering", yrs:"2026–present", key:"Aasif, M.", noProfile:true}]}
 ];
 const alumni = [
  ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025","Project Manager, Intertek"],
  ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025","Project Engineer, Sachse Construction"],
  ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025","Construction Maintenance Engineer, Charter County of Wayne"],
- ["Swetha Saka","M.S., Civil and Environmental Engineering","2022"]
+ ["Swetha Saka","M.S., Civil and Environmental Engineering","2022–2023"]
+];
+const undergrads = [
+ ["Jaehun Kim","Exchange student, Civil and Environmental Engineering","2025"],
+ ["Jose Paulo Mejia","B.S., Civil and Environmental Engineering","2024"],
+ ["David Deman","B.S., Civil and Environmental Engineering","2023"],
+ ["Ebby Alhakam","B.S., Civil and Environmental Engineering","2022"],
+ ["Sebastian Maurer","B.S., Civil and Environmental Engineering","2022"]
 ];
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const avatar = p => `<div class="avatar" aria-hidden="true">${p.photo ? `<img src="${p.photo}" alt="">` : initials(p.name)}</div>`;
@@ -359,7 +378,9 @@ if(document.getElementById("pubList")) document.getElementById("pubList").innerH
 
 if(document.getElementById("peopleGroups")) document.getElementById("peopleGroups").innerHTML = current.map(grp =>
  `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
-  `<a class="person" href="#p-${p.id}">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
+  (p.noProfile ? `<div class="person">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></div>` : `<a class="person" href="#p-${p.id}">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`)).join("")}</div>`).join("");
+{const u=document.getElementById("ugRows"); if(u) u.innerHTML = undergrads.map(([n,p,y]) =>
+ `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}</td><td>${y}</td></tr>`).join("");}
 if(document.getElementById("alumniRows")) document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
  `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
 
