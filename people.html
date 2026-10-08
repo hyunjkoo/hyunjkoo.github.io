@@ -83,6 +83,7 @@ ol.pubs .doi{font-family:var(--mono);font-size:12px;word-break:break-all}
 .note{font-size:13.5px;color:var(--muted);margin-top:12px}
 .group-label{font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 8px}
 .group-label:first-child{margin-top:0}
+.sub-label{font-size:12px;font-weight:600;color:var(--muted);margin:10px 0 4px;padding-left:10px;border-left:2px solid var(--line, #ddd)}
 .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
 .person{border:1px solid var(--line);border-radius:4px;padding:10px 12px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;color:var(--fg)}
 .person:hover{border-color:var(--accent);text-decoration:none}
@@ -261,7 +262,10 @@ nav a.active{color:var(--accent);font-weight:700}
     <h2>Students</h2>
     <div id="peopleGroups"></div>
     <div class="group-label">Alumni</div>
+    <div class="sub-label">Master’s</div>
     <div class="scroll"><table class="alumni"><tbody id="alumniRows"></tbody></table></div>
+    <div class="sub-label">Undergraduate research assistants</div>
+    <div class="scroll"><table class="alumni"><tbody id="ugRows"></tbody></table></div>
     <p class="note">Prospective students interested in BIM, construction risk, renovation, or data-driven infrastructure research may contact Dr. Koo by email with a CV and a short statement of research interests.</p>
   </div>
 </section>
@@ -317,13 +321,22 @@ const current = [
   {id:"gautam", name:"Anil Gautam", prog:"Ph.D., Civil and Environmental Engineering", yrs:"2025–present", key:"Gautam, A.", photo:"gautam.jpg", bio:"Anil Gautam is a Ph.D. student in Civil and Environmental Engineering at Wayne State University, specializing in Construction Engineering and Management under the supervision of Dr. Hyun Jeong Koo. His research interests include adaptive reuse of buildings, artificial intelligence (AI), and building information modeling (BIM), with a focus on how emerging technologies can contribute to more efficient and sustainable practices in the construction industry. He received his Bachelor of Engineering from Tribhuvan University, Nepal, in 2018, and his M.Tech. in Construction Engineering and Management from Manipal Academy of Higher Education, Dubai, U.A.E. Before pursuing his Ph.D., he worked for several years as a civil engineer in Nepal and the United Arab Emirates. Outside of research, he enjoys programming in HTML, Java, and Python, traveling, and playing console games."}]},
  {g:"Master’s students", list:[
   {id:"skvarce", name:"Frank Skvarce", prog:"M.S., Civil and Environmental Engineering", yrs:"2023–present", key:"Skvarce, F."},
-  {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]}
+  {id:"dale", name:"Shanelle Dale", prog:"M.S., Civil and Environmental Engineering", yrs:"2026–present", key:"Dale, S."}]},
+ {g:"Undergraduate research assistants", list:[
+  {id:"aasif", name:"Mahammed Aashir Aasif", prog:"B.S., Chemical Engineering", yrs:"2026–present", key:"Aasif, M.", noProfile:true}]}
 ];
 const alumni = [
  ["Saeed Haddad","M.S., Civil and Environmental Engineering","2024–2025","Project Manager, Intertek"],
  ["Nour Karim","M.S., Civil and Environmental Engineering","2024–2025","Project Engineer, Sachse Construction"],
  ["Mesach Atilola","M.S., Civil and Environmental Engineering","2024–2025","Construction Maintenance Engineer, Charter County of Wayne"],
- ["Swetha Saka","M.S., Civil and Environmental Engineering","2022"]
+ ["Swetha Saka","M.S., Civil and Environmental Engineering","2022–2023"]
+];
+const undergrads = [
+ ["Jaehun Kim","Exchange student, Civil and Environmental Engineering","2025"],
+ ["Jose Paulo Mejia","B.S., Civil and Environmental Engineering","2024"],
+ ["David Deman","B.S., Civil and Environmental Engineering","2023"],
+ ["Ebby Alhakam","B.S., Civil and Environmental Engineering","2022"],
+ ["Sebastian Maurer","B.S., Civil and Environmental Engineering","2022"]
 ];
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const avatar = p => `<div class="avatar" aria-hidden="true">${p.photo ? `<img src="${p.photo}" alt="">` : initials(p.name)}</div>`;
@@ -347,7 +360,9 @@ if(document.getElementById("pubList")) document.getElementById("pubList").innerH
 
 if(document.getElementById("peopleGroups")) document.getElementById("peopleGroups").innerHTML = current.map(grp =>
  `<div class="group-label">${grp.g}</div><div class="people">${grp.list.map(p=>
-  `<a class="person" href="#p-${p.id}">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`).join("")}</div>`).join("");
+  (p.noProfile ? `<div class="person">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></div>` : `<a class="person" href="#p-${p.id}">${avatar(p)}<div><div class="pn">${esc(p.name)}</div><div class="pr">${esc(p.yrs)}</div></div></a>`)).join("")}</div>`).join("");
+{const u=document.getElementById("ugRows"); if(u) u.innerHTML = undergrads.map(([n,p,y]) =>
+ `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}</td><td>${y}</td></tr>`).join("");}
 if(document.getElementById("alumniRows")) document.getElementById("alumniRows").innerHTML = alumni.map(([n,p,y,now]) =>
  `<tr><td><b>${esc(n)}</b></td><td>${esc(p)}${now ? `<div class="now">Now: ${esc(now)}</div>` : ""}</td><td>${y}</td></tr>`).join("");
 
